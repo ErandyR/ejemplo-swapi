@@ -39,7 +39,7 @@ var mostrarDetallePersonaje = function () {
   $.getJSON(url, function (response) {
     $planetaContenedor.html(
         plantillaPlaneta.replace('__nombre__', response.name)
-          .replace('__clima__', response.climate);
+          .replace('__clima__', response.climate)
     );
   });
 };
