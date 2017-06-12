@@ -3,18 +3,12 @@ var cargarPagina = function() {
 };
 
 var cargarPersonajes = function () {
-  $.ajax('http://swapi.co/api/people/', {
-    method:'GET',
-    dataType: 'json',
-    success: function (response) {
-      var personajes=response.results;
+  var url = 'http://swapi.co/api/people/';
+  $.get(url, function(response){
+      var personajes = response.results;
       var total = response.count;
       mostrarTotalPersonajes(total);
       mostrarPersonajes(personajes);
-    },
-    error: function (error) {
-      console.log("error", error);
-    }
   });
 };
 
